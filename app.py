@@ -21,7 +21,7 @@ def get_affirmations():
 
 def get_random_affirmation():
     affirmations = get_affirmations()
-    random_affirmation = random.randint(0, len(affirmations)-1)
+    random_affirmation = random.choice(affirmations)
     return (affirmations[random_affirmation]['text'])
 
 
@@ -39,10 +39,13 @@ def tweet_quote():
     api = tweepy.API(auth)
     
     while True:
-        tweet = create_tweet()
-        api.update_status(tweet + " #iAffirm")
-        time.sleep(interval)
-
+        try:
+            tweet = create_tweet()
+            api.update_status(tweet + " #iAffirm")
+            time.sleep(interval)
+        except tweepy.TweepError as e:
+            print(e.reason)
+        
 
 if __name__ == "__main__":
     tweet_quote() 
