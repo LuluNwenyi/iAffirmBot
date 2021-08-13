@@ -4,7 +4,7 @@ import json
 import requests
 import tweepy
 import os
-import sys
+
 
 consumer_key = os.environ.get('API_KEY')
 consumer_secret_key = os.environ.get('API_SECRET_KEY')
