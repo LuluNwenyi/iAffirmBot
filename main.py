@@ -21,7 +21,7 @@ def get_affirmations():
 
 def get_random_affirmation():
     affirmations = get_affirmations()
-    random_affirmation = random.choice(affirmations)
+    random_affirmation = random.randint(0, len(affirmations) - 1)
     return (affirmations[random_affirmation]['text'])
 
 
