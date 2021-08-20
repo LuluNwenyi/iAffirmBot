@@ -33,7 +33,7 @@ def create_tweet():
 
 def tweet_message():
 
-    interval = 60 * 5
+    interval = 60 * 10
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret_key)
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth)
