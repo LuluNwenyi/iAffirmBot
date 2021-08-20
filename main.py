@@ -31,7 +31,7 @@ def create_tweet():
     return tweet
     
 
-def tweet_quote():
+def tweet_message():
 
     interval = 60 * 5
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret_key)
@@ -48,5 +48,5 @@ def tweet_quote():
         
 
 if __name__ == "__main__":
-    tweet_quote() 
+    tweet_message() 
    
